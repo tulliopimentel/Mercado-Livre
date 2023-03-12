@@ -7,9 +7,15 @@ app = Flask(__name__)
 def home():
     return "Hello, Mercado Livre!"
 
+# USERS
 @app.route("/me")
 def name():
     return service.userMe()
+
+@app.route("/visitas/user/<userId>/dataInicio/<dataInicio>/dataFim/<dataFim>")
+def visitas(userId, dataInicio, dataFim):
+    return service.visitas(userId, dataInicio, dataFim)
+
 
 @app.route("/reclamacoes")
 def reclamacoesTotais():

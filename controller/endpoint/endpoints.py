@@ -1,7 +1,7 @@
 
 # Users
         # Formato date_from = 2023-01-01T00:00:00.000-00:00
-USER_ME = "/users/me"
+USER_ME = "/users/me" #OK
 VISITAS = "/users/{{userId}}/items_visits?date_from={{dateFrom}}&date_to={{dateTo}}"
 
 # Concorrência
@@ -37,7 +37,7 @@ DOCUMENTOS_PERIODO = "/billing/integration/periods/{{date}}/documents?group=MP&d
 RESUMO_FATURAMENTO = "/billing/integration/periods/{{date}}/summary?group=MP&document_type=BILL"
 
 # Métricas de tendências
-OPINIOES_PRODUTO = "/reviews/item/{{itemId}}"
+OPINIOES_PRODUTO = "/reviews/item/{{itemId}}" #OK
 OPINIOES_ITEM_CATALOGO = "/reviews/item/{{itemId}}?catalog_product_id={{catalogProductId}}"
 TENDENCIAS = "/trends/MLB"
 TENDENCIAS_CATEGORIA = "/trends/MLB/{{categoryId}}"
@@ -47,5 +47,5 @@ MAIS_VENDIDOS_CATEGORIA = "/highlights/MLB/category/{{categoryId}}"
 VISITAS_TOTAIS_ANUNCIO = "/visits/items?ids={{itemId}}"
 
 # Reclamações e devoluções
-RECLAMACOES_TOTAIS = "/v1/claims/search?site_id=MLB"
+RECLAMACOES_TOTAIS = "/v1/claims/search?site_id=MLB" #OK
 DEVOLUÇÃO_PRODUTO = "/v1/claims/{{claimId}}/returns"
