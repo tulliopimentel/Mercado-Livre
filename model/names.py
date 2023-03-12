@@ -5,7 +5,7 @@ data_formatada = agora.strftime('%Y-%m-%d')
 
 # Users
 USER_ME = "userMe.csv"
-VISITAS = "visitas-{{userId}}-{{dateFrom}}-{{dateTo}}.csv"
+VISITAS = "visitas-{{userId}}/{{dateFrom}}/{{dateTo}}.csv"
 
 # Concorrência
 DETALHES_CONCORRENCIA = "detalhesConcorrencia.csv"
