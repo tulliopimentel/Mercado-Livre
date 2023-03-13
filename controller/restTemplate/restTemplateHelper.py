@@ -11,8 +11,7 @@ def executeGet(url, endpoint):
     try:
         print(url + endpoint)
         response = requests.get(url + endpoint, headers=headers)
-        json = response.json()
-        return json
+        return response.json()
     except HTTPError as e:
         return errorToken()
 
@@ -21,7 +20,6 @@ def errorToken():
 
 def auth_ml():
     response = requests.get(properties.url_auth + properties.auth)
-    html = response.text
-    return html
+    return response.text
 
 

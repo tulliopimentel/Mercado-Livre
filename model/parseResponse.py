@@ -7,8 +7,7 @@ def download(json, name):
     df = pd.json_normalize(json)
     df.to_csv(bytes, index=False, encoding="utf8")
     bytes.seek(0)   
-    download = downloadCsv(bytes, name)
-    return download
+    return downloadCsv(bytes, name)
 
 def downloadCsv(bytes, name):
     response = make_response(bytes.read())
