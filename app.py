@@ -22,8 +22,8 @@ def detalhesConcorrencia(itemId):
     return service.detalhesConcorrencia(itemId)
 
 @app.route("/publicacoesCatalogo/<productId>")
-def detalhesConcorrencia(productId):
-    return service.detalhesConcorrencia(productId)
+def publicacoesCatalogo(productId):
+    return service.publicacoesCatalogo(productId)
 
 # Reclamações e devoluções
 @app.route("/reclamacoes")
