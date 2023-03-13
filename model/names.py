@@ -8,8 +8,8 @@ USER_ME = "userMe.csv"
 VISITAS = "visitas-{{userId}}/{{dateFrom}}/{{dateTo}}.csv"
 
 # Concorrência
-DETALHES_CONCORRENCIA = "detalhesConcorrencia.csv"
-PUBLICACOES_CATALOGO = "publicacoesCatalogo-{{catalogId}}.csv"
+DETALHES_CONCORRENCIA = "detalhesConcorrencia-{{itemId}}.csv"
+PUBLICACOES_CATALOGO = "publicacoesCatalogo-{{productId}}.csv"
 PUBLICACAO_GANHADORA = "publicacaoGanhadora.csv"
 
 # Custos por venda

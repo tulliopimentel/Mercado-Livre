@@ -17,6 +17,18 @@ def visitas(userId, dateFrom, dateTo):
     csv = parseResponse.download(response, name)
     return csv
 
+# Concorrência
+def detalhesConcorrencia(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.DETALHES_CONCORRENCIA.replace("{{itemId}}", itemId))
+    csv = parseResponse.download(response, names.DETALHES_CONCORRENCIA.replace("{{itemId}}", itemId))
+    return csv
+
+def publicacoesCatalogo(productId):
+    response = restTemplateHelper.executeGet(url, endpoints.PUBLICACOES_CATALOGO.replace("{{productId}}", productId))
+    csv =  parseResponse.download(response, names.PUBLICACOES_CATALOGO.replace("{{productId}}", productId))
+    return csv
+
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

@@ -4,7 +4,7 @@ from urllib.error import HTTPError
 import properties
 
 headers = {
-    'Authorization': 'Bearer APP_USR-2854379993590279-031210-91a41b91eb4f4226fd6860bfc2740ee2-307027133'
+    'Authorization': 'Bearer APP_USR-2854379993590279-031220-fd5e9d0b0f8d2ab33bfef6e6382e4b19-307027133'
 }
 
 def executeGet(url, endpoint):
