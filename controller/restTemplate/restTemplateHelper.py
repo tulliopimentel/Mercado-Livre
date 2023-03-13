@@ -11,6 +11,7 @@ def executeGet(url, endpoint):
     try:
         print(url + endpoint)
         response = requests.get(url + endpoint, headers=headers)
+        response.raise_for_status()
         return response.json()
     except HTTPError as e:
         return errorToken()
