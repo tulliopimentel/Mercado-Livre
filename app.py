@@ -34,6 +34,10 @@ def publicacaoGanhadora(productId):
 def precoPorTipo(price, listingTypeId):
     return service.precoPorTipo(price, listingTypeId)
 
+@app.route("/custoPorVenda/price/<price>/categoryId/<categoryId>")
+def precoPorCategoria(price, categoryId):
+    return service.precoPorCategoria(price, categoryId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():

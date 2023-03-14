@@ -35,6 +35,12 @@ def precoPorTipo(price, listingTypeId):
     name = names.PRECO_POR_TIPO.replace("{{price}}", price).replace("{{listingTypeId}}", listingTypeId)
     return parseResponse.download(response, name)
 
+def precoPorCategoria(price, categoryId):
+    endpoint = endpoints.PRECO_POR_CATEGORIA.replace("{{price}}", price).replace("{{categoryId}}", categoryId)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.PRECO_POR_CATEGORIA.replace("{{price}}", price).replace("{{categoryId}}", categoryId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
