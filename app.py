@@ -17,13 +17,22 @@ def visitas(userId, dataInicio, dataFim):
     return service.visitas(userId, dataInicio, dataFim)
 
 # Concorrência
-@app.route("/detalheConcorrencia/<itemId>")
+@app.route("/concorrencia/detalheConcorrencia/<itemId>")
 def detalhesConcorrencia(itemId):
     return service.detalhesConcorrencia(itemId)
 
-@app.route("/publicacoesCatalogo/<productId>")
+@app.route("/concorrencia/publicacoesCatalogo/<productId>")
 def publicacoesCatalogo(productId):
     return service.publicacoesCatalogo(productId)
+
+@app.route("/concorrencia/publicacaoGanhadora/<productId>")
+def publicacaoGanhadora(productId):
+    return service.publicacaoGanhadora(productId)
+
+# Custos por venda
+@app.route("/custoPorVenda/price/<price>/listingTypeId/<listingTypeId>")
+def precoPorTipo(price, listingTypeId):
+    return service.precoPorTipo(price, listingTypeId)
 
 # Reclamações e devoluções
 @app.route("/reclamacoes")

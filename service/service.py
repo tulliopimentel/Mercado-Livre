@@ -24,6 +24,17 @@ def publicacoesCatalogo(productId):
     response = restTemplateHelper.executeGet(url, endpoints.PUBLICACOES_CATALOGO.replace("{{productId}}", productId))
     return parseResponse.download(response, names.PUBLICACOES_CATALOGO.replace("{{productId}}", productId))
 
+def publicacaoGanhadora(productId):
+    response = restTemplateHelper.executeGet(url, endpoints.PUBLICACAO_GANHADORA.replace("{{productId}}", productId))
+    return parseResponse.download(response, names.PUBLICACAO_GANHADORA)
+
+# Custos por venda
+def precoPorTipo(price, listingTypeId):
+    endpoint = endpoints.PRECO_POR_TIPO.replace("{{price}}", price).replace("{{listingTypeId}}", listingTypeId)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.PRECO_POR_TIPO.replace("{{price}}", price).replace("{{listingTypeId}}", listingTypeId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

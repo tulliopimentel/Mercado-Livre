@@ -13,7 +13,7 @@ PUBLICACOES_CATALOGO = "publicacoesCatalogo-{{productId}}.csv"
 PUBLICACAO_GANHADORA = "publicacaoGanhadora.csv"
 
 # Custos por venda
-PRECO_POR_TIPO = "precoPorTipo.csv"
+PRECO_POR_TIPO = "preco-{{price}}-Tipo-{{listingTypeId}}.csv"
 PRECO_POR_CATEGORIA = "precoPorCategoria-{{categoryId}}.csv"
 
 # Preços produto
