@@ -17,7 +17,7 @@ PRECO_POR_TIPO = "preco-{{price}}-Tipo-{{listingTypeId}}.csv"
 PRECO_POR_CATEGORIA = "precoPorCategoria-{{categoryId}}.csv"
 
 # Preços produto
-PRECO_PRODUTO = "precoProduto-{{productId}}.csv"
+PRECO_PRODUTO = "precoProduto-{{itemId}}.csv"
 
 # Estoque Fullfilment
 ESTOQUE_VENDEDOR = "estoqueVendedor.csv"

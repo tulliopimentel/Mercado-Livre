@@ -41,6 +41,12 @@ def precoPorCategoria(price, categoryId):
     name = names.PRECO_POR_CATEGORIA.replace("{{price}}", price).replace("{{categoryId}}", categoryId)
     return parseResponse.download(response, name)
 
+# Preços produto
+def precoProduto(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.PRECO_PRODUTO.replace("{{itemId}}", itemId))
+    name = names.PRECO_PRODUTO.replace("{{itemId}}", itemId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

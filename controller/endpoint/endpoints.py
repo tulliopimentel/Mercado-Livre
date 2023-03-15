@@ -14,7 +14,7 @@ PRECO_POR_TIPO = "/sites/site_id/listing_prices?price={{price}}&listing_type_id=
 PRECO_POR_CATEGORIA = "/sites/site_id/listing_prices?price={{price}}&category_id={{categoryId}}"
 
 # Preços produto
-PRECO_PRODUTO = "/items/item_id/prices?"
+PRECO_PRODUTO = "/items/{{item_id}}/prices?"
 
 # Estoque Fullfilment
 ESTOQUE_VENDEDOR = "/inventories/{{inventoryId}}/stock/fulfillment"

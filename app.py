@@ -38,6 +38,11 @@ def precoPorTipo(price, listingTypeId):
 def precoPorCategoria(price, categoryId):
     return service.precoPorCategoria(price, categoryId)
 
+# Preços produto
+@app.route("/precoProduto/<itemId>")
+def precoPreoduto(itemId):
+    return service.precoProduto(itemId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():
