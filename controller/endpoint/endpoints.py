@@ -23,7 +23,7 @@ ESTOQUE_NAO_DISPONIVEL = "/inventories/{{inventoryId}}/stock/fulfillment?include
 # Promoções
 PROMOCOES_DISPONIVEIS = "/seller-promotions/users/{{userId}}"
 ITENS_PROMOCAO = "/seller-promotions/promotions/{{promotionId}}/items?promotion_type={{promotionType}}"
-CONSULTAR_CAMPANHA_TRADICIONAL = "/seller-promotions/promotions/{{promoId}}/items?promotion_type=DEAL"
+CONSULTAR_CAMPANHA_TRADICIONAL = "/seller-promotions/promotions/{{promotionId}}/items?promotion_type=DEAL"
 ITENS_CAMPANHA_ML = "/seller-promotions/promotions/{{promotionId}}/items?promotion_type={{promotionType}}"
 CONSULTAR_PROMOCAO_VOLUME = "/seller-promotions/promotions/{{promotionId}}/items?promotion_type=VOLUME"
 

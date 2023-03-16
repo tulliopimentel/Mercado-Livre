@@ -52,6 +52,19 @@ def estoqueVendedor(inventoryId):
 def estoqueNaoDisponivel(inventoryId, attributes):
     return service.estoqueNaoDisponivel(inventoryId, attributes)
 
+# Promoções
+@app.route("/promocao/<userId>")
+def promocaoDisponivel(userId):
+    return service.promocaoDisponivel(userId)
+
+@app.route("/promocao/promocaoId/<promotionId>/tipo/<promotionType>")
+def itensPromocao(promotionId, promotionType):
+    return service.itensPromocao(promotionId, promotionType)
+
+@app.route("/promocao/campanhaTradicional/<promotionId>")
+def consultaCampanhaTradicional(promotionId):
+    return service.campanhaTradicional(promotionId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():

@@ -59,6 +59,23 @@ def estoqueNaoDisponivel(inventoryId, attributes):
     name = names.ESTOQUE_VENDEDOR.replace("{{inventoryId}}", inventoryId).replace("{{attributes}}", attributes)
     return parseResponse.download(response, name)
 
+# Promoção
+def promocaoDisponivel(userId):
+    response = restTemplateHelper.executeGet(url, endpoints.PROMOCOES_DISPONIVEIS.replace("{{userId}}", userId))
+    name = names.PROMOCOES_DISPONIVEIS.replace("{{UserId}}", userId)
+    return parseResponse.download(response, name)
+
+def itensPromocao(promotionId, promotionType):
+    endpoint = endpoints.ITENS_PROMOCAO.replace("{{promotionId}}", promotionId).replace("{{promotionType}}", promotionType)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.ITENS_PROMOCAO.replace("{{promotionId}}", promotionId).replace("{{promotionType}}", promotionType)
+    return parseResponse.download(response, name)
+
+def campanhaTradicional(promotionId):
+    response = restTemplateHelper.executeGet(url, endpoints.PROMOCOES_DISPONIVEIS.replace("{{promotionId}}", promotionId))
+    name = names.CONSULTAR_CAMPANHA_TRADICIONAL.replace("{{campanhaId}}", promotionId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
