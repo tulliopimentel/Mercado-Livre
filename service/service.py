@@ -47,6 +47,18 @@ def precoProduto(itemId):
     name = names.PRECO_PRODUTO.replace("{{itemId}}", itemId)
     return parseResponse.download(response, name)
 
+# Estoque Fullfilment
+def estoqueVendedor(inventoryId):
+    response = restTemplateHelper.executeGet(url, endpoints.ESTOQUE_VENDEDOR.replace("{{inventoryId}}", inventoryId))
+    name = names.ESTOQUE_VENDEDOR.replace("{{inventoryId}}", inventoryId)
+    return parseResponse.download(response, name)
+
+def estoqueNaoDisponivel(inventoryId, attributes):
+    endpoint = endpoints.ESTOQUE_VENDEDOR.replace("{{inventoryId}}", inventoryId).replace("{{attributes}}", attributes)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.ESTOQUE_VENDEDOR.replace("{{inventoryId}}", inventoryId).replace("{{attributes}}", attributes)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

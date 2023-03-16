@@ -20,8 +20,8 @@ PRECO_POR_CATEGORIA = "precoPorCategoria-{{categoryId}}.csv"
 PRECO_PRODUTO = "precoProduto-{{itemId}}.csv"
 
 # Estoque Fullfilment
-ESTOQUE_VENDEDOR = "estoqueVendedor.csv"
-ESTOQUE_NAO_DISPONIVEL = "estoqueNaoDisponivel.csv"
+ESTOQUE_VENDEDOR = "estoqueVendedor-{{inventoryId}}.csv"
+ESTOQUE_NAO_DISPONIVEL = "estoqueNaoDisponivel-{{inventoryId}}-{{attributes}}.csv"
 
 # Promoções
 PROMOCOES_DISPONIVEIS = "promocoesDisponiveis.csv"

@@ -43,6 +43,15 @@ def precoPorCategoria(price, categoryId):
 def precoPreoduto(itemId):
     return service.precoProduto(itemId)
 
+#Estoque Fullfilment
+@app.route("/estoque/<inventoryId>")
+def estoqueVendedor(inventoryId):
+    return service.estoqueVendedor(inventoryId)
+
+@app.route("/estoque/<inventoryId>/atributos/<attributes>")
+def estoqueNaoDisponivel(inventoryId, attributes):
+    return service.estoqueNaoDisponivel(inventoryId, attributes)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():

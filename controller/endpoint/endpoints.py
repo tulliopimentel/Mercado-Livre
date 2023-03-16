@@ -18,7 +18,7 @@ PRECO_PRODUTO = "/items/{{item_id}}/prices?"
 
 # Estoque Fullfilment
 ESTOQUE_VENDEDOR = "/inventories/{{inventoryId}}/stock/fulfillment"
-ESTOQUE_NAO_DISPONIVEL = "/inventories/{{inventoryId}}/stock/fulfillment?include_attributes={{atributes}}"
+ESTOQUE_NAO_DISPONIVEL = "/inventories/{{inventoryId}}/stock/fulfillment?include_attributes={{attributes}}"
 
 # Promoções
 PROMOCOES_DISPONIVEIS = "/seller-promotions/users/{{userId}}"
