@@ -76,6 +76,17 @@ def campanhaTradicional(promotionId):
     name = names.CONSULTAR_CAMPANHA_TRADICIONAL.replace("{{campanhaId}}", promotionId)
     return parseResponse.download(response, name)
 
+def campanhaMl(promotionId, promotionType):
+    endpoint = endpoints.ITENS_CAMPANHA_ML.replace("{{promotionId}}", promotionId).replace("{{promotionType}}", promotionType)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.ITENS_CAMPANHA_ML.replace("{{promotionId}}", promotionId).replace("{{promotionType}}", promotionType)
+    return parseResponse.download(response, name)
+
+def campanhaVolume(promotionId):
+    response = restTemplateHelper.executeGet(url, endpoints.CONSULTAR_PROMOCAO_VOLUME.replace("{{promotionId}}", promotionId))
+    name = names.CONSULTAR_PROMOCAO_VOLUME.replace("{{promotionId}}", promotionId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

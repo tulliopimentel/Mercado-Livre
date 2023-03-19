@@ -27,8 +27,8 @@ ESTOQUE_NAO_DISPONIVEL = "estoqueNaoDisponivel-{{inventoryId}}-{{attributes}}.cs
 PROMOCOES_DISPONIVEIS = "promocoesDisponiveis-{{userId}}.csv"
 ITENS_PROMOCAO = "itensPromocao-{{promotionId}}-{{promotionType}}.csv"
 CONSULTAR_CAMPANHA_TRADICIONAL = "consultaCampanhaTradicional-{{campanhaId}}.csv"
-ITENS_CAMPANHA_ML = "itensDeCampanhaDoMl.csv"
-CONSULTAR_PROMOCAO_VOLUME = "consultaPromocaoDeVolume-{{promocaoId}}.csv"
+ITENS_CAMPANHA_ML = "itensDeCampanhaDoMl-{{promotionId}}-{{promotionType}}.csv"
+CONSULTAR_PROMOCAO_VOLUME = "consultaPromocaoDeVolume-{{promotionId}}.csv"
 
 # Perguntas e respostas
 PERGUNTAS_RECEBIDAS = "perguntasRecebidas.csv"

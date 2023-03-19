@@ -65,6 +65,14 @@ def itensPromocao(promotionId, promotionType):
 def consultaCampanhaTradicional(promotionId):
     return service.campanhaTradicional(promotionId)
 
+@app.route("/promocao/campanhaMl/<promotionId>/tipo/<promotionType>")
+def consultaCampanhaMl(promotionId, promotionType):
+    return service.campanhaMl(promotionId, promotionType)
+
+@app.route("/promocao/campanhaVolume/<promotionId>")
+def consultaCampanhaVolume(promotionId):
+    return service.campanhaVolume(promotionId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():
