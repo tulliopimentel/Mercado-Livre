@@ -73,6 +73,15 @@ def consultaCampanhaMl(promotionId, promotionType):
 def consultaCampanhaVolume(promotionId):
     return service.campanhaVolume(promotionId)
 
+# Perguntas e Respostas 
+@app.route("/perguntas/vendedor/<sellerId>")
+def perguntasRecebidas(sellerId):
+    return service.perguntasRecebidas(sellerId)
+
+@app.route("/perguntas/produto/<itemId>")
+def perguntasProduto(itemId):
+    return service.perguntasProduto(itemId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():

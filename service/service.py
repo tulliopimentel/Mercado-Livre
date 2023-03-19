@@ -87,6 +87,17 @@ def campanhaVolume(promotionId):
     name = names.CONSULTAR_PROMOCAO_VOLUME.replace("{{promotionId}}", promotionId)
     return parseResponse.download(response, name)
 
+# Perguntas e Respostas
+def perguntasRecebidas(sellerId):
+    response = restTemplateHelper.executeGet(url, endpoints.PERGUNTAS_RECEBIDAS.replace("{{sellerId}}", sellerId))
+    name = names.PERGUNTAS_RECEBIDAS.replace("{{sellerId}}", sellerId)
+    return parseResponse.download(response, name)
+
+def perguntasProduto(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.PERGUNTAS_EM_UM_PRODUTO.replace("{{itemId}}", itemId))
+    name = names.PERGUNTAS_EM_UM_PRODUTO.replace("{{itemId}}", itemId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

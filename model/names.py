@@ -31,8 +31,8 @@ ITENS_CAMPANHA_ML = "itensDeCampanhaDoMl-{{promotionId}}-{{promotionType}}.csv"
 CONSULTAR_PROMOCAO_VOLUME = "consultaPromocaoDeVolume-{{promotionId}}.csv"
 
 # Perguntas e respostas
-PERGUNTAS_RECEBIDAS = "perguntasRecebidas.csv"
-PERGUNTAS_EM_UM_PRODUTO = "perguntasEmUmProduto-{{productId}}.csv"
+PERGUNTAS_RECEBIDAS = "perguntasRecebidas-{{sellerId}}.csv"
+PERGUNTAS_EM_UM_PRODUTO = "perguntasEmUmProduto-{{itemId}}.csv"
 
 # Relatórios de faturamento
 RELATORIO_PERIODO = "relatorioDeUmPeriodo-{{date}}.csv"
