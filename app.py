@@ -101,7 +101,7 @@ def opinioesProduto(produto):
     return service.opinioesProduto(produto)
 
 @app.route("/opinioes/produto/<produto>/catalogo/<catalogProductId>")
-def opinioesProduto(produto, catalogProductId):
+def opinioesItemCatalogo(produto, catalogProductId):
     return service.opinioesItemCatalogo(produto, catalogProductId)
 
 @app.route("/tendencias")
@@ -109,7 +109,7 @@ def tendencias():
     return service.tendencias()
 
 @app.route("/tendencias/categoria/<categoryId>")
-def tendencias(categoryId):
+def tendenciasCategoria(categoryId):
     return service.tendenciasCategoria(categoryId)
 
 # Reclamações e devoluções
