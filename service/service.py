@@ -114,15 +114,31 @@ def resumoFaturamento(periodo):
     name = names.RESUMO_FATURAMENTO.replace("{{date}}", periodo)
     return parseResponse.download(response, name)
 
-# Reclamações e devoluções
-def reclamacoesTotais():
-    response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
-    return parseResponse.download(response, names.RECLAMACOES_TOTAIS)
-
 # Métricas de tendências
 def opinioesProduto(produto):
     response = restTemplateHelper.executeGet(url, endpoints.OPINIOES_PRODUTO.replace("{{item_id}}", produto))
     return parseResponse.download(response, names.OPINIOES_PRODUTO.replace("{{itemId}}", produto))
+
+def opinioesItemCatalogo(ItemId, catalogId):
+    endpoint = endpoints.OPINIOES_ITEM_CATALOGO.replace("{{itemId}}", ItemId).replace("{{catalogProductId}}", catalogId)
+    response = restTemplateHelper.executeGet(url, endpoint)
+    name = names.OPINIOES_ITEM_CATALOGO.replace("{{itemId}}", ItemId).replace("{{catalogProductId}}", catalogId)
+    return parseResponse.download(response, name)
+
+def tendencias():
+    response = restTemplateHelper.executeGet(url, endpoints.TENDENCIAS)
+    name = names.TENDENCIAS
+    return parseResponse.download(response, name)
+
+def tendenciasCategoria(categoryId):
+    response = restTemplateHelper.executeGet(url, endpoints.TENDENCIAS_CATEGORIA.replace("{{categoryId}}", categoryId))
+    name = names.TENDENCIAS_CATEGORIA.replace("{{categoryId}}",categoryId)
+    return parseResponse.download(response, name)
+
+# Reclamações e devoluções
+def reclamacoesTotais():
+    response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
+    return parseResponse.download(response, names.RECLAMACOES_TOTAIS)
 
 # Auth
 def errorToken():

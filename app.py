@@ -95,15 +95,27 @@ def documentoPeriodo(periodo):
 def resumoFaturamento(periodo):
     return service.resumoFaturamento(periodo)
 
-# Reclamações e devoluções
-@app.route("/reclamacoes")
-def reclamacoesTotais():
-    return service.reclamacoesTotais()
-
 # Métricas de tendências
 @app.route("/opinioes/produto/<produto>")
 def opinioesProduto(produto):
     return service.opinioesProduto(produto)
+
+@app.route("/opinioes/produto/<produto>/catalogo/<catalogProductId>")
+def opinioesProduto(produto, catalogProductId):
+    return service.opinioesItemCatalogo(produto, catalogProductId)
+
+@app.route("/tendencias")
+def tendencias():
+    return service.tendencias()
+
+@app.route("/tendencias/categoria/<categoryId>")
+def tendencias(categoryId):
+    return service.tendenciasCategoria(categoryId)
+
+# Reclamações e devoluções
+@app.route("/reclamacoes")
+def reclamacoesTotais():
+    return service.reclamacoesTotais()
 
 # Auth
 @app.route("/redirect")

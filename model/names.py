@@ -41,7 +41,7 @@ RESUMO_FATURAMENTO = "resumoFaturamento.csv"
 
 # Métricas de tendências
 OPINIOES_PRODUTO = "opinioesProduto-{{itemId}}.csv"
-OPINIOES_ITEM_CATALOGO = "opinioesItemCatalogo.csv"
+OPINIOES_ITEM_CATALOGO = "opinioesItemCatalogo-{{itemId}}-{{catalogProductId}}.csv"
 TENDENCIAS = "tendencias-{}.csv".format(data_formatada)
 TENDENCIAS_CATEGORIA = "tendenciasCategoria-{{categoryId}}.csv"
 QUALIDADE_ITEM = "qualidadeItem-{{itemId}}.csv"
