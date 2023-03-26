@@ -82,6 +82,19 @@ def perguntasRecebidas(sellerId):
 def perguntasProduto(itemId):
     return service.perguntasProduto(itemId)
 
+# Relatórios de faturamento
+@app.route("/relatorio")
+def relatorio():
+    return service.relatorio()
+
+@app.route("/documento/periodo/<periodo>")
+def documentoPeriodo(periodo):
+    return service.documento(periodo)
+
+@app.route("/resumoFaturamento/periodo/<periodo>")
+def resumoFaturamento(periodo):
+    return service.resumoFaturamento(periodo)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():

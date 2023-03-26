@@ -98,6 +98,22 @@ def perguntasProduto(itemId):
     name = names.PERGUNTAS_EM_UM_PRODUTO.replace("{{itemId}}", itemId)
     return parseResponse.download(response, name)
 
+# Relatórios de faturamento
+def relatorio():
+    response = restTemplateHelper.executeGet(url, endpoints.RELATORIO_PERIODO)
+    name = names.RELATORIO_PERIODO
+    return parseResponse.download(response, name)
+
+def documento(periodo):
+    response = restTemplateHelper.executeGet(url, endpoints.DOCUMENTOS_PERIODO.replace("{{date}}", periodo))
+    name = names.DOCUMENTOS_PERIODO.replace("{{date}}", periodo)
+    return parseResponse.download(response, name)
+
+def resumoFaturamento(periodo):
+    response = restTemplateHelper.executeGet(url, endpoints.RESUMO_FATURAMENTO.replace("{{date}}", periodo))
+    name = names.RESUMO_FATURAMENTO.replace("{{date}}", periodo)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
