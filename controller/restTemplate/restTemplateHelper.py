@@ -9,7 +9,7 @@ headers = {
 
 def executeGet(url, endpoint):
     try:
-        response = requests.get(url + endpoint, headers=headers)
+        response = requests.get(url + endpoint, headers=headers, timeout=10)
         response.raise_for_status()
         return response.json()
     except HTTPError as e:

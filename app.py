@@ -1,7 +1,10 @@
 from flask import Flask
+from config import Config
+import time
 from service import service
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 @app.route("/")
 def home():
@@ -146,3 +149,8 @@ def redirect():
 def auth():
     return service.auth()
 
+# teste timeout
+@app.route("/timeout")
+def timeout():
+    time.sleep(15)
+    return "Hello, timeout!"
