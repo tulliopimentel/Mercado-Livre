@@ -135,6 +135,26 @@ def tendenciasCategoria(categoryId):
     name = names.TENDENCIAS_CATEGORIA.replace("{{categoryId}}",categoryId)
     return parseResponse.download(response, name)
 
+def qualidadeItem(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.QUALIDADE_ITEM.replace("{{itemId}}", itemId))
+    name = names.QUALIDADE_ITEM.replace("{{itemId}}", itemId)
+    return parseResponse.download(response, name)
+
+def melhorarQualidadeItem(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.MELHORAR_QUALIDADE_ITEM.replace("{{itemId}}", itemId))
+    name = names.MELHORAR_QUALIDADE_ITEM.replace("{{itemId}}", itemId)
+    return parseResponse.download(response, name)
+
+def maisVendidoCategoria(categoryId):
+    response = restTemplateHelper.executeGet(url, endpoints.MAIS_VENDIDOS_CATEGORIA.replace("{{categoryId}}", categoryId))
+    name = names.MAIS_VENDIDOS_CATEGORIA.replace("{{categoryId}}", categoryId)
+    return parseResponse.download(response, name)
+
+def visitasTotaisAnuncio(itemId):
+    response = restTemplateHelper.executeGet(url, endpoints.VISITAS_TOTAIS_ANUNCIO.replace("{{itemId}}", itemId))
+    name = names.VISITAS_TOTAIS_ANUNCIO.replace("{{itemyId}}", itemId)
+    return parseResponse.download(response, name)
+
 # Reclamações e devoluções
 def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)

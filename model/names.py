@@ -47,7 +47,7 @@ TENDENCIAS_CATEGORIA = "tendenciasCategoria-{{categoryId}}.csv"
 QUALIDADE_ITEM = "qualidadeItem-{{itemId}}.csv"
 MELHORAR_QUALIDADE_ITEM = "melhorarQualidadeItem-{{itemId}}.csv"
 MAIS_VENDIDOS_CATEGORIA = "maisVendidosCategoria-{{categoryId}}.csv"
-VISITAS_TOTAIS_ANUNCIO = "visitasTotaisAnuncio-{{anuncioId}}.csv"
+VISITAS_TOTAIS_ANUNCIO = "visitasTotaisAnuncio-{{itemId}}.csv"
 
 # Reclamações e devoluções
 RECLAMACOES_TOTAIS = "reclamacoesTotais.csv"

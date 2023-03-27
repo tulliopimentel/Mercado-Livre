@@ -112,6 +112,22 @@ def tendencias():
 def tendenciasCategoria(categoryId):
     return service.tendenciasCategoria(categoryId)
 
+@app.route("/qualidade/<itemId>")
+def qualidadeItem(itemId):
+    return service.qualidadeItem(itemId)
+
+@app.route("/melhorar-qualidade/<itemId>")
+def melhorarQualidadeItem(itemId):
+    return service.melhorarQualidadeItem(itemId)
+
+@app.route("/maisVendido/categoria/<categoryId>")
+def maisVendidoCategoria(categoryId):
+    return service.maisVendidoCategoria(categoryId)
+
+@app.route("/visitaTotal/anuncio/<itemId>")
+def visitasTotaisAnuncio(itemId):
+    return service.visitasTotaisAnuncio(itemId)
+
 # Reclamações e devoluções
 @app.route("/reclamacoes")
 def reclamacoesTotais():
