@@ -51,4 +51,4 @@ VISITAS_TOTAIS_ANUNCIO = "visitasTotaisAnuncio-{{itemId}}.csv"
 
 # Reclamações e devoluções
 RECLAMACOES_TOTAIS = "reclamacoesTotais.csv"
-DEVOLUÇÃO_PRODUTO = "devolucaoProduto-{{productId}}.csv"
+DEVOLUÇÃO_PRODUTO = "devolucaoProduto-{{claimId}}.csv"

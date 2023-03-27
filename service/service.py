@@ -160,6 +160,11 @@ def reclamacoesTotais():
     response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
     return parseResponse.download(response, names.RECLAMACOES_TOTAIS)
 
+def devolucaoProduto(claimId):
+    response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
+    name = names.DEVOLUÇÃO_PRODUTO.replace("{{claimId}}", claimId)
+    return parseResponse.download(response, name)
+
 # Auth
 def errorToken():
     return restTemplateHelper.errorToken()

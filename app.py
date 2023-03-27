@@ -133,6 +133,10 @@ def visitasTotaisAnuncio(itemId):
 def reclamacoesTotais():
     return service.reclamacoesTotais()
 
+def devolucaoProduto(claimId):
+    return service.devolucaoProduto(claimId)
+
+
 # Auth
 @app.route("/redirect")
 def redirect():
