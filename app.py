@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request, session, redirect, url_for
 from config import Config
 import time
 from service import service
@@ -9,6 +9,21 @@ app.config.from_object(Config)
 @app.route("/")
 def home():
     return "Hello, Mercado Livre!"
+    
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+@app.route("/autenticar", methods=['POST'])
+def autenticar():
+    email = request.form['email']
+    senha = request.form['senha']
+
+    if email == 'tulliopimentelb@gmail.com' and senha == '123':
+        session['logged_in'] = True
+        return redirect(url_for('home'))
+    else:
+        return 'Login inválido'
 
 # USERS
 @app.route("/me")
@@ -141,8 +156,8 @@ def devolucaoProduto(claimId):
 
 
 # Auth
-@app.route("/redirect")
-def redirect():
+@app.route("/errorToken")
+def errorToken():
     return service.errorToken()
 
 @app.route("/auth")
