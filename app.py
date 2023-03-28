@@ -9,10 +9,10 @@ app.config.from_object(Config)
 @app.route("/")
 def home():
     return "Hello, Mercado Livre!"
-    
+
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    return render_template('html/login.html')
 
 @app.route("/autenticar", methods=['POST'])
 def autenticar():
