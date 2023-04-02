@@ -9,3 +9,4 @@ class Config:
     MYSQL_USER = 'root'
     MYSQL_PASSWORD = 'Tu110201'
     MYSQL_DB = 'application'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:Tu110201@localhost:3307/application'
