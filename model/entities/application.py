@@ -1,10 +1,7 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from app import db
+from model.entities import Credentials
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
-
-class User(db.Model):
+class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     token = db.Column(db.String(200))
     user_application_id = db.Column(db.String(200))

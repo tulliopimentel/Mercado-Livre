@@ -1,12 +1,15 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from config import Config
 from flask_mysqldb import MySQL
-from service import service
+from flask_sqlalchemy import SQLAlchemy
 import time
 
 app = Flask(__name__)
 app.config.from_object(Config)
-mysql = MySQL(app)
+
+db = SQLAlchemy(app)
+
+from service import userService, service
 
 @app.route("/")
 def home():
@@ -21,11 +24,10 @@ def autenticar():
     email = request.form['email']
     senha = request.form['senha']
 
-    if email == 'tulliopimentelb@gmail.com' and senha == '123':
-        session['logged_in'] = True
+    if userService.User.is_valid_credentials(db, email, senha):
         return redirect(url_for('home'))
     else:
-        return 'Login inválido'
+        return 'Login invalido'
 
 # USERS
 @app.route("/me")
