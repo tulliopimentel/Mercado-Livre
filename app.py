@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from config import Config
-import time
+from flask_mysqldb import MySQL
 from service import service
+import time
 
 app = Flask(__name__)
 app.config.from_object(Config)
+mysql = MySQL(app)
 
 @app.route("/")
 def home():
