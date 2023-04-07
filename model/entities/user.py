@@ -25,6 +25,5 @@ class User(UserMixin, db.Model):
         else:
             return False
         
-    @login_manager.user_loader
     def load_user(email):
         return User.query.filter_by(email=email).first()
