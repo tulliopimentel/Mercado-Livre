@@ -2,16 +2,21 @@ from flask import Flask, render_template, request, redirect, url_for
 from config import Config
 from flask_mysqldb import MySQL
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, login_required, current_user
 import time
 
 app = Flask(__name__)
 app.config.from_object(Config)
+login_manager = LoginManager()
+login_manager.login_view = 'login'
+login_manager.init_app(app)
 
 db = SQLAlchemy(app)
 
 from service import userService, service
 
 @app.route("/")
+@login_required
 def home():
     return "Hello, Mercado Livre!"
 
@@ -25,21 +30,30 @@ def autenticar():
     senha = request.form['senha']
 
     if userService.User.is_valid_credentials(db, email, senha):
+        user = userService.User.load_user(email)
+        login_user(user, remember=True)
         return redirect(url_for('home'))
     else:
         return 'Login invalido'
+    
+@login_manager.user_loader
+def load_user(user_id):
+    return userService.User.query.filter_by(id=user_id).first()
 
 # USERS
 @app.route("/me")
+@login_required
 def name():
     return service.userMe()
 
 @app.route("/visitas/user/<userId>/dataInicio/<dataInicio>/dataFim/<dataFim>")
+@login_required
 def visitas(userId, dataInicio, dataFim):
     return service.visitas(userId, dataInicio, dataFim)
 
 # Concorrência
 @app.route("/concorrencia/detalheConcorrencia/<itemId>")
+@login_required
 def detalhesConcorrencia(itemId):
     return service.detalhesConcorrencia(itemId)
 
@@ -47,6 +61,7 @@ def detalhesConcorrencia(itemId):
 def publicacoesCatalogo(productId):
     return service.publicacoesCatalogo(productId)
 
+@login_required
 @app.route("/concorrencia/publicacaoGanhadora/<productId>")
 def publicacaoGanhadora(productId):
     return service.publicacaoGanhadora(productId)
