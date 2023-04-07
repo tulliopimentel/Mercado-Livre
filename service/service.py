@@ -161,7 +161,7 @@ def reclamacoesTotais():
     return parseResponse.download(response, names.RECLAMACOES_TOTAIS)
 
 def devolucaoProduto(claimId):
-    response = restTemplateHelper.executeGet(url, endpoints.RECLAMACOES_TOTAIS)
+    response = restTemplateHelper.executeGet(url, endpoints.DEVOLUÇÃO_PRODUTO.replace("{{claimId}}", claimId))
     name = names.DEVOLUÇÃO_PRODUTO.replace("{{claimId}}", claimId)
     return parseResponse.download(response, name)
 
