@@ -18,7 +18,7 @@ from service import userService, service
 @app.route("/")
 @login_required
 def home():
-    return "Hello, Mercado Livre!"
+    return render_template('home/home.html')
 
 @app.route("/login")
 def login():
